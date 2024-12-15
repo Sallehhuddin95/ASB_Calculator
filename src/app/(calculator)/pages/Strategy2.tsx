@@ -10,16 +10,27 @@ const Strategy2: React.FC = () => {
   const [interestRate, setInterestRate] = useState<number>(5);
   const [loanTerm, setLoanTerm] = useState<number>(40);
   const [dividendRate, setDividendRate] = useState<number>(5);
-  const [endAmount, setEndAmount] = useState<number | null>(null);
+  const [remainingLoan, setRemainingLoan] = useState<number | null>(null);
+  const [totalLoanPaid, setTotalLoanPaid] = useState<number | null>(null);
+  const [asbCapital, setAsbCapital] = useState<number | null>(null);
+  const [netProfit, setNetProfit] = useState<number | null>(null);
 
   // Save data to localStorage whenever the state changes
-  const saveToLocalStorage = (endAmount: number | null) => {
+  const saveToLocalStorage = (
+    remainingLoan: number | null,
+    totalLoanPaid: number | null,
+    asbCapital: number | null,
+    netProfit: number | null
+  ) => {
     const data = {
       loanAmount,
       interestRate,
       loanTerm,
       dividendRate,
-      endAmount,
+      remainingLoan,
+      totalLoanPaid,
+      asbCapital,
+      netProfit,
     };
     localStorage.setItem("strategy2Data", JSON.stringify(data));
   };
@@ -33,20 +44,34 @@ const Strategy2: React.FC = () => {
       setInterestRate(parsedData.interestRate || 5);
       setLoanTerm(parsedData.loanTerm || 40);
       setDividendRate(parsedData.dividendRate || 5);
-      setEndAmount(parsedData.endAmount || null);
+      setRemainingLoan(parsedData.remainingLoan || null);
+      setTotalLoanPaid(parsedData.totalLoanPaid || null);
+      setAsbCapital(parsedData.asbCapital || null);
+      setNetProfit(parsedData.netProfit || null);
     }
   }, []);
 
   // Calculate Strategy 2
   const handleCalculate = () => {
-    const { finalEndAmount }: Strategy2Result = calculateStrategy2(
-      loanAmount,
-      loanTerm,
-      dividendRate
+    const { remainingLoan, totalLoanPaid, asbCapital }: Strategy2Result =
+      calculateStrategy2(loanAmount, loanTerm, interestRate, dividendRate);
+
+    // Ensure precision for net profit calculation
+    const calculatedNetProfit = parseFloat(
+      (asbCapital - totalLoanPaid).toFixed(2)
     );
 
-    setEndAmount(finalEndAmount);
-    saveToLocalStorage(finalEndAmount);
+    setRemainingLoan(remainingLoan);
+    setTotalLoanPaid(totalLoanPaid);
+    setAsbCapital(asbCapital);
+    setNetProfit(calculatedNetProfit);
+
+    saveToLocalStorage(
+      remainingLoan,
+      totalLoanPaid,
+      asbCapital,
+      calculatedNetProfit
+    );
   };
 
   return (
@@ -113,11 +138,37 @@ const Strategy2: React.FC = () => {
         </Button>
 
         {/* Results */}
-        {endAmount !== null && (
+        {asbCapital !== null && (
           <Box mt={4}>
             <Text fontSize="lg">
               Final Capital After {loanTerm} Years: MYR{" "}
-              {endAmount.toLocaleString("en-US", {
+              {asbCapital.toLocaleString("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
+            </Text>
+
+            <Text fontSize="md" color="gray.500">
+              Final Loan Balance: MYR{" "}
+              {remainingLoan
+                ? remainingLoan.toLocaleString("en-US", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })
+                : 0}
+            </Text>
+
+            <Text fontSize="md" color="gray.500">
+              Total Loan Paid: MYR{" "}
+              {totalLoanPaid?.toLocaleString("en-US", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
+            </Text>
+
+            <Text fontSize="md" color="green.500" fontWeight="bold">
+              Net Profit: MYR{" "}
+              {netProfit?.toLocaleString("en-US", {
                 minimumFractionDigits: 2,
                 maximumFractionDigits: 2,
               })}
