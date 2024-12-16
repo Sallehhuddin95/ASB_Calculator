@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import Strategy1 from "../app/(calculator)/pages/Strategy1"; // Import your Strategy1 component
-import Strategy2 from "../app/(calculator)/pages/Strategy2"; // Import your Strategy2 component
+import Strategy1 from "./(calculator)/pages/asbf/Strategy1"; // Import your Strategy1 component
+import Strategy2 from "./(calculator)/pages/asbf/Strategy2"; // Import your Strategy2 component
 import { Box, Button, Heading, Text } from "@chakra-ui/react";
 
 export default function Home() {
