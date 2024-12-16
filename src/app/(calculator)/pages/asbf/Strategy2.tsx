@@ -3,7 +3,7 @@ import { Box, Text, Button, Stack } from "@chakra-ui/react";
 import {
   calculateStrategy2,
   Strategy2Result,
-} from "../utils/calculateStrategy2"; // Import the utility function
+} from "../../utils/asbf/calculateStrategy2"; // Import the utility function
 
 const Strategy2: React.FC = () => {
   const [loanAmount, setLoanAmount] = useState<number>(200000);

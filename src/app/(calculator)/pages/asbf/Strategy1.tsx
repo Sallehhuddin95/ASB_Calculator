@@ -4,7 +4,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import {
   calculateStrategy1,
   Strategy1Result,
-} from "../utils/calculateStrategy1";
+} from "../../utils/asbf/calculateStrategy1";
 
 const Strategy1: React.FC = () => {
   const [loanAmount, setLoanAmount] = useState<number>(200000);
