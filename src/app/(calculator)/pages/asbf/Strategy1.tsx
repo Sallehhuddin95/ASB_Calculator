@@ -116,6 +116,62 @@ const Strategy1: React.FC = () => {
       <Text fontSize="xl" mb={4}>
         ASB Financing - Strategy 1: Rolling Dividends to Pay the Financing
       </Text>
+      <Text fontSize="lg" mb={6}>
+        In this strategy, you take a loan and use the dividends generated from
+        your ASB investment (typically 5-6% annually) to help pay the loan
+        starting from the second year. Here is how it works:
+      </Text>
+      <Text fontSize="md" mb={4}>
+        <strong>Year 1:</strong>
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - You pay the loan repayment fully using your own money.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - This allows your ASB capital to remain intact to start generating
+        dividends.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        <strong>Year 2 and Beyond:</strong>
+      </Text>
+      <Text fontSize="md" mb={4}>
+        <strong>Dividends Used for Loan Repayment:</strong> Starting from the
+        second year, dividends from your ASB investment are used as the primary
+        source to pay the annual loan repayment.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        <strong>If Dividends {"<"} Loan Repayment:</strong>
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - You top up the shortfall using your own funds. Any remaining amount
+        from this top-up is invested in other instruments.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        <strong>If Dividends {">"} Loan Repayment:</strong>
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - Excess dividends are invested in other instruments with a return rate
+        of 5-6% annually.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        <strong>Your Monthly Loan Repayment Becomes an Investment:</strong>
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - From the second year onward, the money you would have otherwise used
+        to pay the loan is redirected to invest in other instruments. This
+        results in two streams of investment:
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - <em>Excess Dividends</em> (if applicable) and{" "}
+        <em>Your Monthly Repayment Funds</em>.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        <strong>Goal:</strong> By redirecting funds and excess dividends into
+        other investments, the strategy allows you to grow your wealth over the
+        loan term while maintaining the ASB capital. The potential returns from
+        these investments, combined with the ASB capital, aim to maximize your
+        net profit at the end of the loan term.
+      </Text>
 
       {/* Loan Calculation Form */}
       <Stack mt={6}>

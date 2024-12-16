@@ -80,9 +80,69 @@ const Strategy2: React.FC = () => {
         ASB Financing - Strategy 2: Compound Interest
       </Text>
       <Text fontSize="lg" mb={6}>
-        In this strategy, you reinvest the dividends each year without
-        withdrawing them. Over time, the compounded dividends grow the capital,
-        potentially resulting in higher returns.
+        This strategy focuses on leveraging the power of compound interest by
+        reinvesting the annual dividends from your ASB investment without
+        withdrawing them. The aim is to grow your ASB capital significantly over
+        the loan term while meeting your loan obligations.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        <strong>1. Loan Repayment and Dividends:</strong>
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - You take a loan and begin repaying it through monthly installments,
+        calculated based on an amortization schedule.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - Simultaneously, the ASB investment generates dividends (typically 5-6%
+        annually), which are left to compound within the ASB account.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        <strong>2. Compound Growth:</strong>
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - Each year, the dividends generated from the ASB investment are
+        reinvested back into the account.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - The compounded dividends lead to exponential growth in your ASB
+        capital over the loan term.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        <strong>3. Loan Obligation:</strong>
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - The monthly loan repayments are paid from your personal funds, as the
+        dividends remain untouched for reinvestment.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - The loan balance gradually decreases as you make regular repayments,
+        eventually reaching zero by the end of the loan term.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        <strong>4. Net Profit Calculation:</strong>
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - <strong>Final ASB Capital:</strong> This represents the total value of
+        your ASB investment after the loan term, which includes the compounded
+        dividends.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - <strong>Total Loan Paid:</strong> This includes the total principal
+        and interest paid over the loan term.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - <strong>Net Profit:</strong> This is calculated as the final ASB
+        capital minus the total loan paid, representing your overall financial
+        gain from this strategy.
+      </Text>
+      <Text fontSize="md" mb={4}>
+        <strong>5. Goal of the Strategy:</strong>
+      </Text>
+      <Text fontSize="md" mb={4}>
+        - The strategy aims to maximize the benefits of compounded returns while
+        systematically paying off the loan. By the end of the term, the total
+        ASB capital is expected to exceed the total loan paid, resulting in a
+        significant net profit.
       </Text>
 
       {/* Loan Calculation Form */}
